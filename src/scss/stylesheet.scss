@@ -53,4 +53,16 @@ main {
   background-color: $main-color;
   width: 800px;
   margin: 0 auto;
+  box-shadow: 10px 10px 1px darken($background-color, 5%);
+}
+
+.dryck-div {
+  text-align: center;
+  color: $text-color;
+  border-top: 5px solid $background-color;
+}
+
+#meny-div {
+  color: $text-color;
+  text-align: center;
 }
