@@ -1,0 +1,44 @@
+$accent-color: #9ba36a;
+$main-color: #f0daae;
+
+#header {
+  position: relative;
+  text-align: center;
+  color: red;
+}
+
+#headtext {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#headimg {
+  width: 800px;
+  opacity: 0.5;
+}
+
+#nav {
+  overflow: hidden;
+  background-color: $accent-color;
+  width: 800px;
+  margin: 0 auto;
+
+  a{
+  text-decoration: none;
+  color: black;
+  padding: 15px 20px;
+  float: left;
+  display: block;
+}
+}
+
+#nav a:hover {
+  background-color: darken($accent-color, 15%);
+}
+
+
+#nav a#user {
+  float: right;
+}
