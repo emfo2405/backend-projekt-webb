@@ -1,10 +1,12 @@
 $accent-color: #9ba36a;
-$main-color: #f0daae;
+$main-color: #fcf8ec;
+$background-color: #43200c;
+$text-color: #864821;
 
 #header {
   position: relative;
   text-align: center;
-  color: red;
+  color: $text-color;
 }
 
 #headtext {
@@ -41,4 +43,14 @@ $main-color: #f0daae;
 
 #nav a#user {
   float: right;
+}
+
+body {
+ background-color: $background-color;
+}
+
+main {
+  background-color: $main-color;
+  width: 800px;
+  margin: 0 auto;
 }
