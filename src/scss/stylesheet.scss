@@ -1,7 +1,12 @@
-$accent-color: #9ba36a;
-$main-color: #fcf8ec;
+$accent-color: #fff8ee;
+$main-color: #fbead0;
 $background-color: #43200c;
 $text-color: #864821;
+
+body {
+color: $text-color;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
 
 #header {
   position: relative;
@@ -11,14 +16,16 @@ $text-color: #864821;
 
 #headtext {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 210px;
+  left: 20px;
+  width: 350px;
+  font-weight:400;
+  color: $text-color;
 }
 
 #headimg {
   width: 800px;
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
 #nav {
@@ -29,10 +36,12 @@ $text-color: #864821;
 
   a{
   text-decoration: none;
-  color: black;
+  color: $text-color;
   padding: 15px 20px;
   float: left;
   display: block;
+  font-size: 110%;
+  font-weight: normal;
 }
 }
 
@@ -65,4 +74,80 @@ main {
 #meny-div {
   color: $text-color;
   text-align: center;
+}
+
+#logga {
+  width: 90px;
+  display: block;
+  margin: 0 auto;
+}
+
+#logga-div {
+  padding-top: 10px;
+  margin-bottom: -40px;
+  background-color: $accent-color;
+}
+
+.home-text {
+  text-align: center;
+  margin: 0 auto;
+  padding: 3px;
+  margin-top: -3px;
+
+  p {
+    width: 500px;
+    margin: 0 auto;
+  }
+}
+
+#first-text {
+  background-color: $accent-color;
+}
+
+button {
+  padding: 15px 30px;
+  background-color: $accent-color;
+  border: none;
+  border: 2px solid $text-color;
+  color: $text-color;
+  font-size: 100%;
+  margin: 30px;
+  border-radius: 50px;
+}
+
+button:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 12px 1px $text-color;
+  cursor: pointer;
+}
+
+.drinkimg {
+  width: 200px;
+  padding: 10px;
+}
+
+
+
+#drink-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    p {
+      padding-left: -150px;
+    }
+}
+
+#anställda {
+  border-top: 3px solid $text-color;
+}
+
+footer {
+  background-color: $accent-color;
+  border-top: 3px solid $text-color;
+  text-align: center;
+  padding: 5px;
 }

@@ -5,48 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaffe</title>
     <link rel="stylesheet" href="./scss/stylesheet.scss">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=local_cafe" />
   </head>
   <body>
     <main>
     <div id="header">
+      <div id="logga-div">
+      <img id ="logga" src="./images/Kaffelogga.png">
+      </div>
+      <div id="nav">
+      <a href="index.html">Hem</a>
+      <a href="omoss.html">Om oss</a>
+      <a href="meny.html">Meny</a>
+      <a href="anställda.html" id="user">För anställda</a>
+</div>
+      
       <img id="headimg" src="./images/cafe.jpg">
-      <div id="headtext">
-        <h1>Kaffe</h1>
-      </div> 
+      <h1 id="headtext">Välkommen in till oss på Kaffekoppen!</h1>
     </div>
 
 
     
-<div id="nav">
-  <a href="index.html">Hem</a>
-  <a href="omoss.html">Om oss</a>
-  <a href="meny.html">Meny</a>
-  <a href="anställda.html" id="user">För anställda</a>
-</div>
 
-<div>
+
+<div id="first-text" class="home-text">
   <h2>Välkommen till vår sida!</h2>
-  <p></p>
+  <p>Välkomna till oss på Kaffekoppen! Vi är ett litet café som ligger i centrum av Göteborg. Här handlar allt om kaffe - från den klassiska bryggkaffen till spännande kaffedrycker. Vi har noggrant valt ut olika kaffesorter för att kunna ge er en helhetsupplevelse där varje kund kan hitta det som passar för just den stunden. Om ni vill veta mer eller har några funderingar kan ni klicka er vidare till sidan "om oss" eller komma förbi och ta det över en kopp kaffe. </p>
   <div>
     <button>Läs mer om oss</button>
   </div>
 </div>
 
-<div>
+<div class="home-text">
   <h2>Säsongens drycker</h2>
-  <p></p>
+  <img class="drinkimg" src="./images/matchalatte.jpg">
+    <img class="drinkimg" src="./images/strawberrylatte.jpg">
+      <img class="drinkimg" src="./images/icelatte.jpg">
+      <div id="drink-div"><p class="drink-text">Islatte Matcha</p>
+      <p class="drink-text">Jordgubbslatte</p>
+    <p class="drink-text">Islatte Karamell</p></div>
   <div>
     <button>Vår meny</button>
   </div>
 </div>
 
-<div>
+<div id="anställda" class="home-text">
   <h2>För våra anställda</h2>
-  <p></p>
+  <p>Är du anställd hos oss och vill komma åt ditt konto? Gå vidare till sidan "Anställda" och logga in med ditt användarnamn och lösenord. Där kan du sedan göra uppdateringar eller ändringar.</p>
   <div>
     <button>Anställda</button>
   </div>
 </div>
+
+<footer>
+  <p>Kaffekoppen, est. 1997 <br>
+  Haga Nygata, Göteborg</p>
+</footer>
 
 </main>
     
