@@ -38,7 +38,7 @@ async function loginEmployee(event) {
 
             //Om allt stämmer visas den skyddade sidan
             if (newResponse.ok) {
-                window.location.href = "omoss.html";
+                window.location.href = "meny.html";
             }
 
         } else {
