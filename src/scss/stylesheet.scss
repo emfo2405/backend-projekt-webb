@@ -151,3 +151,54 @@ footer {
   text-align: center;
   padding: 5px;
 }
+
+
+input {
+  width: 500px;
+  border-radius: 10px;
+  border: none;
+  border-bottom: 2px solid $text-color;
+  border-right: 2px solid $text-color;
+  padding: 10px;
+  margin-left: 150px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+label {
+  margin-left: 150px;
+  font-size: 110%;
+  padding-bottom: 30px;
+}
+
+#form-login {
+  margin-top: 30px;
+}
+
+.form-btn {
+  display:flex;
+  margin: auto;
+}
+
+#message {
+  padding-bottom: 50px;
+}
+
+#nytt-konto {
+  border-top: 3px solid $text-color;
+}
+
+#login-button {
+  display: flex;
+  margin: auto;
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+
+#submit-button {
+  @extend #login-button;
+}
+
+#contact-button {
+  @extend #login-button;
+}
