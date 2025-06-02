@@ -32,6 +32,8 @@ async function addEmployee(event) {
             alert("E-postadress måste vara ifylld")
         } else if (data.message === 'Användarnamn eller e-post finns redan') {
             alert("Användaren är redan registrerad, testa med ett nytt användarnamn eller e-postadress")
+        } else if (data.message === 'Användare skapad') {
+            alert("Användaren skapad");
         }
 
     } catch (err){
