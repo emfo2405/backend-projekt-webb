@@ -38,6 +38,10 @@ async function addEmployee(event) {
         console.error("Registreringen misslyckades")
     }
 
-
-
 }
+
+//Hämta in knapp från formuläret
+let submitButton = document.getElementById("submit-button");
+
+//Lägga till funktionen på knappen
+submitButton.onclick = addEmployee;
