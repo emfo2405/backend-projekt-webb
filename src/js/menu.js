@@ -25,11 +25,15 @@ async function postMenu() {
         let productId = input.id;
         let li = document.createElement("li");
         let deleteButton = document.createElement("button");
+        let updateButton = document.createElement("button");
         deleteButton.innerText = "Ta bort produkt";
+        updateButton.innerText = "Uppdatera produkt";
         deleteButton.onclick = () => removeProduct(productId);
+        updateButton.onclick = () => updateProduct(productId);
 
         li.innerHTML = `<h3 id="post-h3"> ${input.drinkname}, ${input.price}</h3> <br> <p> Beskrivning: ${input.description} <br> ${input.allergens} </p>`
         li.appendChild(deleteButton);
+        li.appendChild(updateButton);
         //Lägger till li-element 
         menuList.appendChild(li);
 
@@ -56,7 +60,6 @@ async function addProduct(event) {
         allergens: allergens.value 
     }
 
-console.log(menu);
 
 
     try {
@@ -93,10 +96,10 @@ menuButton.onclick = addProduct;
 postMenu();
 
 //Funktion för att radera innehåll
-async function removeProduct(dataId) {
+async function removeProduct(productId) {
     
 //Hämtar information från API för att kunna radera inlägg
-    let response = await fetch(`http://localhost:3001/api/menu/${dataId}`, {
+    let response = await fetch(`http://localhost:3001/api/menu/${productId}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
@@ -112,6 +115,75 @@ async function removeProduct(dataId) {
     } 
 
     
+}
+
+async function updateProduct(productId) {
+
+    let menuDiv = document.getElementById("menuDiv");
+
+        let response = await fetch(`http://localhost:3001/api/menu/${productId}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    });
+
+        let data = await response.json();
+        console.log(data);
+
+    document.getElementById("drinkName").value = data.rows[0].drinkname;
+    document.getElementById("drinkType").value = data.rows[0].drinktype;
+    document.getElementById("price").value = data.rows[0].price;
+    document.getElementById("description").value = data.rows[0].description;
+    document.getElementById("allergens").value = data.rows[0].allergens;
+
+    let updateProductBtn = document.createElement("button");
+    updateProductBtn.innerText = "Uppdatera produkt";
+    updateProductBtn.onclick = () => postNewProduct(productId);
+
+    menuDiv.appendChild(updateProductBtn);
+
+
+    } 
+
+    async function postNewProduct(productId) {
+
+    let drinkName = document.getElementById("drinkName");
+    let drinkType = document.getElementById("drinkType");
+    let price = document.getElementById("price");
+    let description = document.getElementById("description");
+    let allergens = document.getElementById("allergens");
+
+    //Hämtar värden inmatade i formuläret
+    let menu = {
+        drinkName: drinkName.value,
+        drinkType: drinkType.value,
+        price: price.value,
+        description: description.value,
+        allergens: allergens.value 
+    }
+
+    
+//Hämtar information från API för att kunna radera inlägg
+    let response = await fetch(`http://localhost:3001/api/menu/${productId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(menu)
+    });
+
+    let data = await response.json();
+
+    //Om allt går rätt visas den nya listan utan de raderade inläggen
+    if(response.ok) {
+        postMenu();
+    } 
+
+    
 
 }
+
+    
+
 
