@@ -280,6 +280,29 @@ async function postMessage() {
 }
 
 
+//Funktion för att radera innehåll
+async function removeMessage(productId) {
+    
+//Hämtar information från API för att kunna radera inlägg
+    let response = await fetch(`http://localhost:3001/api/contact/${productId}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    });
+
+    let data = await response.json();
+    console.log(data);
+
+    //Om allt går rätt visas den nya listan utan de raderade inläggen
+    if(response.ok) {
+        postMessage();
+    } 
+
+    
+}
+
+
     
 
 
