@@ -1,3 +1,37 @@
+//Kör funktionen att kolla om token finns vid inladdning av sida
+window.onload = checkToken;
+
+//Funktion för att kolla om token redan finns och användaren är inloggad
+async function checkToken() {
+    //Hämta token från localStorage
+let token = localStorage.getItem("token");
+//Om token finns kontrolleras det om den stämmer
+if(token) {
+     let newResponse = await fetch('http://localhost:3001/api/secret', {
+            method: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': 'application/json'
+            
+        }});
+
+        //Om token stämmer visas inte inloggningen utan innehållet på sidan
+         if (newResponse.ok) {
+            document.getElementById("secret-content").style.display = "block";
+            
+            //Om token inte stämmer visas inloggning och token tas bort från localStorage
+        } else {
+            document.getElementById("secret-content").style.display = "none";
+        localStorage.removeItem("token");
+            
+        //Om token inte finns visas inloggning
+    } }  else {
+
+        document.getElementById("secret-content").style.display = "none";
+}    
+}
+
+
 //Funktion för inloggning för en användare
 async function loginEmployee(event) {
     event.preventDefault();
@@ -38,7 +72,7 @@ async function loginEmployee(event) {
 
             //Om allt stämmer visas den skyddade sidan
             if (newResponse.ok) {
-                window.location.href = "meny.html";
+                document.getElementById("secret-content").style.display = "block";
             }
 
         } else {

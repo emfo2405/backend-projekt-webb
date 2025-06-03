@@ -202,3 +202,17 @@ label {
 #contact-button {
   @extend #login-button;
 }
+
+#secret-content {
+  display: none;
+}
+
+select {
+  @extend input;
+  width: 520px;
+
+  value {
+    color: rgb(78, 78, 78);
+  }
+
+}
