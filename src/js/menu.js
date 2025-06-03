@@ -182,6 +182,7 @@ async function updateProduct(productId) {
     //Om allt går rätt visas den nya listan utan de raderade inläggen
     if(response.ok) {
         postMenu();
+        location.reload();
     } 
 
     
