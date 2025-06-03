@@ -22,9 +22,14 @@ async function postMenu() {
     //För varje rad i databasen ska ett li-element skapas i listan som visar informationen
     info.forEach(input => {
         //Skapar ett li-element
+        let productId = input.id;
         let li = document.createElement("li");
-        li.innerHTML = `<h3 id="post-h3"> ${input.drinkname}, ${input.price}</h3> <br> <p> Beskrivning: ${input.description} <br> ${input.allergens} </p>`
+        let deleteButton = document.createElement("button");
+        deleteButton.innerText = "Ta bort produkt";
+        deleteButton.onclick = () => removeProduct(productId);
 
+        li.innerHTML = `<h3 id="post-h3"> ${input.drinkname}, ${input.price}</h3> <br> <p> Beskrivning: ${input.description} <br> ${input.allergens} </p>`
+        li.appendChild(deleteButton);
         //Lägger till li-element 
         menuList.appendChild(li);
 
@@ -86,4 +91,27 @@ let menuButton = document.getElementById("menu-button");
 menuButton.onclick = addProduct;
 
 postMenu();
+
+//Funktion för att radera innehåll
+async function removeProduct(dataId) {
+    
+//Hämtar information från API för att kunna radera inlägg
+    let response = await fetch(`http://localhost:3001/api/menu/${dataId}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    });
+
+    let data = await response.json();
+    console.log(data);
+
+    //Om allt går rätt visas den nya listan utan de raderade inläggen
+    if(response.ok) {
+        postMenu();
+    } 
+
+    
+
+}
 
