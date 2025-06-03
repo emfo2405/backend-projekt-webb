@@ -254,3 +254,13 @@ select {
   cursor: pointer;
 }
 
+#contact-form {
+  border-top: 3px solid $text-color; 
+  margin-top: 50px;
+
+  h2{
+    text-align: center;
+    margin-top: 50px;
+  }
+}
+
