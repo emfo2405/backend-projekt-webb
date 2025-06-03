@@ -1,4 +1,5 @@
 postBooking();
+postMessage();
 
 //Funktion för att publicera menyn för anställda
 async function postMenu() {
@@ -241,6 +242,43 @@ async function removeBooking(productId) {
 
     
 }
+
+//Funktion för att visa meddelanden från kontaktformulär
+async function postMessage() {
+    //Hämtar in list-element från HTML
+    let messagesList = document.getElementById("messages-list");
+
+    //Tömmer listan så det inte blir dubbletter
+    messagesList.innerHTML="";
+
+    //Hämtar in information från API och databasen som ska publiceras
+    let response = await fetch('http://localhost:3001/api/contact', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    });
+    
+    let data = await response.json();
+    let info = data.rows;
+    console.log(data.rows);
+
+    //För varje rad i databasen ska ett li-element skapas i listan som visar informationen
+    info.forEach(input => {
+        //Skapar ett li-element
+        let productId = input.id;
+        let li = document.createElement("li");
+        let deleteButton = document.createElement("button");
+        deleteButton.innerText = "Ta bort meddelande";
+        deleteButton.onclick = () => removeMessage(productId);
+        li.innerHTML = `<h3 id="post-h3"> ${input.name}, ${input.email}</h3> <br> <p>  ${input.message}</p>`
+        li.appendChild(deleteButton);
+        //Lägger till li-element 
+        messagesList.appendChild(li);
+
+    });
+}
+
 
     
 
