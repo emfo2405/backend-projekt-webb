@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./scss/stylesheet.scss">
     <script type="module" src="js/register.js"></script>
     <script type="module" src="js/login.js"></script>
+    <script type="module" src="js/menu.js"></script>
   </head>
   <body>
     <main>
@@ -74,6 +75,9 @@
 
 
             <div id="secret-content">
+
+<div class="user-btn"><button id="logout-button" type="submit">Logga ut</button></div>
+
               <div id="meny-div">
     <h2>Lägg till produkt i menyn</h2>
 </div>
@@ -93,7 +97,7 @@
             </select><br>
 
             <label for="price">Pris:</label><br>
-            <input type="number" id="price" name="price" placeholder="Pris..."><br>
+            <input type="text" id="price" name="price" placeholder="Pris..."><br>
 
             <label for="description">Beskrivning:</label><br>
             <input type="text" id="description" name="description" placeholder="Beskrivning..."><br>

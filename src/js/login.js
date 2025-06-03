@@ -1,6 +1,7 @@
 //Kör funktionen att kolla om token finns vid inladdning av sida
 window.onload = checkToken;
 
+
 //Funktion för att kolla om token redan finns och användaren är inloggad
 async function checkToken() {
     //Hämta token från localStorage
@@ -19,7 +20,6 @@ if(token) {
          if (newResponse.ok) {
             document.getElementById("secret-content").style.display = "block";
             document.getElementById("anställd-content").style.display = "none";
-            postMenu();
             
             //Om token inte stämmer visas inloggning och token tas bort från localStorage
         } else {
@@ -78,7 +78,7 @@ async function loginEmployee(event) {
             if (newResponse.ok) {
                 document.getElementById("secret-content").style.display = "block";
                 document.getElementById("anställd-content").style.display = "none";
-                postMenu();
+
             }
 
         } else {
@@ -86,7 +86,7 @@ async function loginEmployee(event) {
         }
 
     } catch (err) {
-        console.error("Något gick fel vid inloggning");
+        console.error("Något gick fel vid inloggning", err);
         alert("Något gick fel vid inloggning, försök igen")
     }
     
@@ -98,34 +98,15 @@ let loginButton = document.getElementById("login-button");
 //Lägger till funktion på knappen
 loginButton.onclick = loginEmployee;
 
-//Funktion för att publicera menyn
-async function postMenu() {
-    //Hämtar in list-element från HTML
-    let menuList = document.getElementById("menu-list");
+//Hämta in knapp för att logga ut
+let logOutButton = document.getElementById("logout-button");
+logOutButton.onclick = logOut;
 
-    //Tömmer listan så det inte blir dubbletter
-    menuList.innerHTML="";
+//Funktion för att logga ut
+function logOut() {
+    localStorage.removeItem("token");
+                document.getElementById("secret-content").style.display = "none";
+            document.getElementById("anställd-content").style.display = "block";
 
-    //Hämtar in information från API och databasen som ska publiceras
-    let response = await fetch('http://localhost:3001/api/menu', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-    });
-    
-    let data = await response.json();
-    let info = data.rows;
-    console.log(data.rows);
-
-    //För varje rad i databasen ska ett li-element skapas i listan som visar informationen
-    info.forEach(input => {
-        //Skapar ett li-element
-        let li = document.createElement("li");
-        li.innerHTML = `<h3 id="post-h3"> ${input.drinkname}, ${input.price}</h3> <br> <p> Beskrivning: ${input.description} <br> ${input.allergens} </p>`
-
-        //Lägger till li-element 
-        menuList.appendChild(li);
-
-    });
 }
+
