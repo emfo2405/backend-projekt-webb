@@ -216,3 +216,22 @@ select {
   }
 
 }
+
+#booking-form {
+
+  border-top: 3px solid $text-color; 
+
+  h2 {
+    text-align: center;
+  }
+
+  p {
+    text-align:center;
+  }
+}
+
+#booking-button {
+  margin: 0 auto;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}

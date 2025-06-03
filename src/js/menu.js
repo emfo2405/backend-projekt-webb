@@ -41,7 +41,6 @@ async function postMenu() {
 }
 
 //Lägga till nya element i menyn
-//Funktion för att lägga till användare i databasen
 async function addProduct(event) {
     event.preventDefault();
 
