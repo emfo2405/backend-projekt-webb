@@ -30,7 +30,7 @@ async function postMenuCustomers() {
         
         //Skapar ett li-element
         let li = document.createElement("li");
-        li.innerHTML = `<h3 id="post-h3"> ${input.drinkname}, ${input.price}</h3> <br> <p> Beskrivning: ${input.description} <br> ${input.allergens} </p>`
+        li.innerHTML = `<h3 id="post-h3"> ${input.drinkname}, ${input.price} kr</h3> <br> <p> Beskrivning: ${input.description} <br> Allergener: ${input.allergens} </p>`
 
         //Lägger till li-element 
         if(input.drinktype === "Kalla kaffedrycker") {

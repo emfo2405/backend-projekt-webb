@@ -264,3 +264,100 @@ select {
   }
 }
 
+#meny-div {
+  h2 {
+    text-align: left;
+    margin-left: 40px;
+  }
+
+  li {
+    list-style-type: none;
+    text-align: left;
+    border: 1px solid $text-color;
+    width: 700px;
+  }
+
+  h3 {
+    margin-left: 50px;
+  }
+
+  p{
+    margin-left: 50px;
+    margin-top: -30px;
+  }
+}
+
+#menu-now {
+  @extend #meny-div;
+  padding-top: 20px;
+
+  h2{
+    margin-left: 0;
+    text-align: center;
+  }
+
+  p {
+    margin-bottom: -10px;
+  }
+}
+
+#menu-div {
+  text-align: center;
+    border-top: 3px solid $text-color; 
+}
+
+#menu-button {
+  margin-left: 310px;
+}
+
+#menuDiv {
+    border-bottom: 3px solid $text-color; 
+}
+
+
+#logout-button {
+  margin-left: 340px;
+}
+
+#bookings {
+    border-top: 3px solid $text-color;
+    margin-top: 50px;
+    padding-top: 20px;
+margin-bottom: 50px;
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+        border: 1px solid $text-color;
+    width: 700px;
+  }
+
+    h2 {
+      text-align: center;
+    }
+
+    h3 {
+      margin-left: 50px;
+    }
+
+    p {
+      margin-top: -30px;
+      margin-left: 50px;
+      margin-bottom: -10px;
+    }
+}
+
+#messages {
+    border-top: 3px solid $text-color;
+border-bottom: none;
+margin-top: 50px;
+margin-bottom: 50px;
+
+   h2 {text-align: center;}
+
+  @extend #bookings;
+}
+
+
+

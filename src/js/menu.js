@@ -213,7 +213,7 @@ async function postBooking() {
         let deleteButton = document.createElement("button");
         deleteButton.innerText = "Ta bort bokning";
         deleteButton.onclick = () => removeBooking(productId);
-        li.innerHTML = `<h3 id="post-h3"> ${input.name}, ${input.email}</h3> <br> <p>  ${input.date.split("T")[0]} <br> ${input.time} </p>`
+        li.innerHTML = `<h3 id="post-h3"> ${input.name}</h3> <br> <p> E-post: ${input.email} <br> Datum: ${input.date.split("T")[0]} <br> Tid: ${input.time} </p>`
         li.appendChild(deleteButton);
         //Lägger till li-element 
         bookingList.appendChild(li);
@@ -271,7 +271,7 @@ async function postMessage() {
         let deleteButton = document.createElement("button");
         deleteButton.innerText = "Ta bort meddelande";
         deleteButton.onclick = () => removeMessage(productId);
-        li.innerHTML = `<h3 id="post-h3"> ${input.name}, ${input.email}</h3> <br> <p>  ${input.message}</p>`
+        li.innerHTML = `<h3 id="post-h3"> ${input.name}</h3> <br> <p> E-post: ${input.email} <br>  Meddelande: ${input.message}</p>`
         li.appendChild(deleteButton);
         //Lägger till li-element 
         messagesList.appendChild(li);
