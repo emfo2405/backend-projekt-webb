@@ -43,6 +43,7 @@ async function loginEmployee(event) {
     //Hämta användarnamn och lösenord från inloggningsformulär
     let username = document.getElementById("login-username");
     let password = document.getElementById("login-password");
+            let error = document.getElementsByClassName("error-p");
 
     let users = {
         username: username.value,
@@ -61,6 +62,14 @@ async function loginEmployee(event) {
         });
         
         let data = await response.json();
+
+
+
+            if(data.message) {
+        error.innerText=`${data.message}`;
+    }else if (data.error) {
+        error.innerText=`${data.error}`
+    }
 
         //Om allt är ok sparas token till local storage och hemligt innehåll hämtas
         if(response.ok) {

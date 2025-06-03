@@ -51,6 +51,8 @@ async function addProduct(event) {
     let price = document.getElementById("price");
     let description = document.getElementById("description");
     let allergens = document.getElementById("allergens");
+    let error = document.getElementById("error");
+
 
     //Hämtar värden inmatade i formuläret
     let menu = {
@@ -60,7 +62,6 @@ async function addProduct(event) {
         description: description.value,
         allergens: allergens.value 
     }
-
 
 
     try {
@@ -76,8 +77,10 @@ async function addProduct(event) {
 
     let data = await response.json();
 
-            if (data.message === 'Drycken finns redan i menyn') {
-        alert("Drycken finns redan i menyn, lägg till en ny!");
+           if(data.message) {
+        error.innerText=`${data.message}`;
+    }else if (data.error) {
+        error.innerText=`${data.error}`
     }
 
     console.log(data);

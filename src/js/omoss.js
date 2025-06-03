@@ -6,6 +6,7 @@ async function addMessage(event) {
     let name = document.getElementById("name");
     let email = document.getElementById("email");
     let message = document.getElementById("message");
+    let error = document.getElementById("error-p");
 
     //Hämtar värden inmatade i formuläret
     let contact = {
@@ -26,6 +27,12 @@ async function addMessage(event) {
     });
 
     let data = await response.json();
+
+               if(data.message) {
+        error.innerText=`${data.message}`;
+    }else if (data.error) {
+        error.innerText=`${data.error}`
+    }
 
     console.log(data);
 

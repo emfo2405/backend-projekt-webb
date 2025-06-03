@@ -8,6 +8,7 @@ async function addBooking(event) {
     let date = document.getElementById("date");
     let time = document.getElementById("time");
     let message = document.getElementById("message");
+    let error = document.getElementById("error-p")
 
     //Hämtar värden inmatade i formuläret
     let booking = {
@@ -34,6 +35,12 @@ async function addBooking(event) {
     let data = await response.json();
 
     console.log(data);
+
+    if(data.message) {
+        error.innerText=`${data.message}`;
+    }else if (data.error) {
+        error.innerText=`${data.error}`
+    }
 
 
 } catch (err) {
