@@ -1,4 +1,5 @@
-//Funktion för att publicera menyn
+
+//Funktion för att publicera menyn för anställda
 async function postMenu() {
     //Hämtar in list-element från HTML
     let menuList = document.getElementById("menu-list");
@@ -85,3 +86,4 @@ let menuButton = document.getElementById("menu-button");
 menuButton.onclick = addProduct;
 
 postMenu();
+
