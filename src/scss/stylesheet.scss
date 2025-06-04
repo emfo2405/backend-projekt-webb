@@ -1,19 +1,23 @@
+//Färgtema satt för webbplatsen
 $accent-color: #fff8ee;
 $main-color: #fbead0;
 $background-color: #43200c;
 $text-color: #864821;
 
+//Grundinställningar för sidan
 body {
 color: $text-color;
 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
+//Positionering för header
 #header {
   position: relative;
   text-align: center;
   color: $text-color;
 }
 
+//Positionering för textstycke
 #headtext {
   position: absolute;
   top: 210px;
@@ -23,11 +27,13 @@ font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
   color: $text-color;
 }
 
+//Storlek för huvudbild
 #headimg {
   width: 800px;
   opacity: 0.4;
 }
 
+//Design av meny och länkar i menyn
 #nav {
   overflow: hidden;
   background-color: $accent-color;
@@ -54,10 +60,12 @@ font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
   float: right;
 }
 
+//Färg satt för body
 body {
  background-color: $background-color;
 }
 
+//Färg och design satt för main
 main {
   background-color: $main-color;
   width: 800px;
@@ -65,17 +73,20 @@ main {
   box-shadow: 10px 10px 1px darken($background-color, 5%);
 }
 
+//Design av text
 .dryck-div {
   text-align: center;
   color: $text-color;
   border-top: 5px solid $background-color;
 }
 
+//Design av meny-element
 #meny-div {
   color: $text-color;
   text-align: center;
 }
 
+//Design av logga
 #logga {
   width: 90px;
   display: block;
@@ -88,6 +99,7 @@ main {
   background-color: $accent-color;
 }
 
+//Design och positionering av huvudtextstycken
 .home-text {
   text-align: center;
   margin: 0 auto;
@@ -104,6 +116,7 @@ main {
   background-color: $accent-color;
 }
 
+//Design av knappar
 button {
   padding: 15px 30px;
   background-color: $accent-color;
@@ -121,13 +134,14 @@ button:hover {
   cursor: pointer;
 }
 
+//Design av bildelement
 .drinkimg {
   width: 200px;
   padding: 10px;
 }
 
 
-
+//Placering av text för bildelement
 #drink-div {
     display: flex;
     flex-direction: row;
@@ -141,10 +155,12 @@ button:hover {
     }
 }
 
+//Textelement för anställda på startsida
 #anställda {
   border-top: 3px solid $text-color;
 }
 
+//Design och placering av footer
 footer {
   background-color: $accent-color;
   border-top: 3px solid $text-color;
@@ -152,7 +168,7 @@ footer {
   padding: 5px;
 }
 
-
+//Design av input i formulär på webbsidan
 input {
   width: 500px;
   border-radius: 10px;
@@ -165,29 +181,35 @@ input {
   margin-bottom: 20px;
 }
 
+//Placering av label i formulären
 label {
   margin-left: 150px;
   font-size: 110%;
   padding-bottom: 30px;
 }
 
+//Placering av login-formulär
 #form-login {
   margin-top: 30px;
 }
 
+//Placering av knapp
 .form-btn {
   display:flex;
   margin: auto;
 }
 
+//Placering av meddelande-div
 #message {
   padding-bottom: 50px;
 }
 
+//Border satt för nytt-konto-element
 #nytt-konto {
   border-top: 3px solid $text-color;
 }
 
+//Placering av inloggningsknapp
 #login-button {
   display: flex;
   margin: auto;
@@ -195,18 +217,22 @@ label {
   margin-top: 10px;
 }
 
+//Skicka knapp har samma designval som inloggningsknapp
 #submit-button {
   @extend #login-button;
 }
 
+//Knapp för kontaktformulär har samma designval som inloggningsknapp
 #contact-button {
   @extend #login-button;
 }
 
+//När användaren inte är inloggad visas inte secret content-div
 #secret-content {
   display: none;
 }
 
+//Designval för select-meny
 select {
   @extend input;
   width: 520px;
@@ -217,6 +243,7 @@ select {
 
 }
 
+//Design av bokningsformulär
 #booking-form {
 
   border-top: 3px solid $text-color; 
@@ -230,18 +257,21 @@ select {
   }
 }
 
+//Design av knapp för bokning
 #booking-button {
   margin: 0 auto;
   margin-bottom: 50px;
   margin-top: 20px;
 }
 
+//Design av textelement
 #kaffekoppen {
   margin-top: 5px;
   margin-bottom: 0px;
   margin-left: -5px;
 }
 
+//Design av länkar som ser ut som knapp-element
 .link {
   @extend button;
   text-decoration: none;
@@ -254,6 +284,7 @@ select {
   cursor: pointer;
 }
 
+//Design av kontaktformulär
 #contact-form {
   border-top: 3px solid $text-color; 
   margin-top: 50px;
@@ -264,6 +295,7 @@ select {
   }
 }
 
+//Design av meny-div med listelement
 #meny-div {
   h2 {
     text-align: left;
@@ -287,6 +319,7 @@ select {
   }
 }
 
+//Design av menyn under hemligt innehåll
 #menu-now {
   @extend #meny-div;
   padding-top: 20px;
@@ -301,11 +334,13 @@ select {
   }
 }
 
+//Design av meny-div
 #menu-div {
   text-align: center;
     border-top: 3px solid $text-color; 
 }
 
+//Design av knapp
 #menu-button {
   margin-left: 310px;
 }
@@ -314,11 +349,12 @@ select {
     border-bottom: 3px solid $text-color; 
 }
 
-
+//Design av logga ut knapp
 #logout-button {
   margin-left: 340px;
 }
 
+//Design och placering av bokningsinformation
 #bookings {
     border-top: 3px solid $text-color;
     margin-top: 50px;
@@ -348,6 +384,7 @@ margin-bottom: 50px;
     }
 }
 
+//Design och placering av meddelanden från kontaktformulär
 #messages {
     border-top: 3px solid $text-color;
 border-bottom: none;
@@ -359,6 +396,7 @@ margin-bottom: 50px;
   @extend #bookings;
 }
 
+//Design av error-p
 #error-p {
   text-align: center;
 }
@@ -367,10 +405,9 @@ margin-bottom: 50px;
   text-align: center;
 }
 
-//Anpassningar för olika skärmstorlekar
+//Anpassningar för skärmar med maxbredden 900px
 @media(max-width: 900px) {
   main {
-    background-color: red;
     width: 500px;
   }
 
@@ -506,9 +543,9 @@ margin-bottom: 50px;
 
 }
 
+//Anpassningar för skärmstorlekar med maxbredden 600px
 @media(max-width: 600px) {
   main {
-    background-color: aqua;
     width: 410px;
   }
 
