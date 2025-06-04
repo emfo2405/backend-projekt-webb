@@ -30,6 +30,7 @@ async function postMenu() {
         let updateButton = document.createElement("button");
         deleteButton.innerText = "Ta bort produkt";
         updateButton.innerText = "Uppdatera produkt";
+        updateButton.id = "updateButton"
         deleteButton.onclick = () => removeProduct(productId);
         updateButton.onclick = () => updateProduct(productId);
 
@@ -143,6 +144,7 @@ async function updateProduct(productId) {
 
     let updateProductBtn = document.createElement("button");
     updateProductBtn.innerText = "Uppdatera produkt";
+    updateProductBtn.id = "updateProductBtn";
     updateProductBtn.onclick = () => postNewProduct(productId);
 
     menuDiv.appendChild(updateProductBtn);

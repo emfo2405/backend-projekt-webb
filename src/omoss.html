@@ -1,68 +1,79 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaffe</title>
-    <link rel="stylesheet" href="./scss/stylesheet.scss">
-    <script type="module" src="js/omoss.js"></script>
-  </head>
-  <body>
-    <main>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaffe</title>
+  <link rel="stylesheet" href="./scss/stylesheet.scss">
+  <script type="module" src="js/omoss.js"></script>
+</head>
+
+<body>
+  <main>
+    <!--Header för sidan med logga och titel-->
     <div id="header">
       <div id="logga-div">
-      <img id ="logga" src="./images/Kaffelogga.png">
-            <h3 id="kaffekoppen">Kaffekoppen</h3>
+        <img id="logga" src="./images/Kaffelogga.png">
+        <h3 id="kaffekoppen">Kaffekoppen</h3>
       </div>
+      <!--Meny för sidan-->
       <div id="nav">
-      <a href="index.html">Hem</a>
-      <a href="omoss.html">Om oss</a>
-      <a href="kundmeny.html">Meny</a>
-      <a href="anställda.html" id="user">För anställda</a>
-</div>
-      
+        <a href="index.html">Hem</a>
+        <a href="omoss.html">Om oss</a>
+        <a href="kundmeny.html">Meny</a>
+        <a href="anställda.html" id="user">För anställda</a>
+      </div>
+
+      <!--Bild inkluderas efter menyn-->
       <img id="headimg" src="./images/cafe.jpg">
     </div>
 
+    <!--Introduktionstext-->
     <div class="home-text">
-        <h1>Välkommen till kaffekoppen</h1>
-        <p>Hos oss på kaffekoppen handlar allt om dryck, vi fokuserar främst på kaffedrycker men du kan även hitta annat
-          som bland annat teer och juicer. Vi är ett litet men passionerat café som strävar efter att erbjuda våra
-          kunder det bästa vi vet, en riktigt god kopp kaffe. Vi är noga med att välja kaffesorter som ska passa
-          just de drycker vi erbjuder och vi gör allt med fokus på kvalitét. Vi strävar efter att erbjuda lokala
-          produkter så långt det går och samarbetar därför med lokala rosterier. Fråga oss gärna om vilket kaffe
-          vi har inne just nu! <br>
-          <br>Vår meny innehåller allt från den klassiska espresson och den svarta koppen kaffe till modernare drycker
-          som ismatcha latte och latte med jordgubbssirap. Med vår breda meny hoppas vi att du ska hitta just rätt dryck för dig. 
-          Vi kan också göra anpassningar till dryckerna med koffeinfritt kaffe eller specialmjölk.<br>
-          <br>Vi finns i centrala Göteborg och kan enkelt nås via kollektivtrafiken. <br>
-          <br>Välkomna in på en kopp!
-        </p>
+      <h1>Välkommen till kaffekoppen</h1>
+      <p>Hos oss på kaffekoppen handlar allt om dryck, vi fokuserar främst på kaffedrycker men du kan även hitta annat
+        som bland annat teer och juicer. Vi är ett litet men passionerat café som strävar efter att erbjuda våra
+        kunder det bästa vi vet, en riktigt god kopp kaffe. Vi är noga med att välja kaffesorter som ska passa
+        just de drycker vi erbjuder och vi gör allt med fokus på kvalitét. Vi strävar efter att erbjuda lokala
+        produkter så långt det går och samarbetar därför med lokala rosterier. Fråga oss gärna om vilket kaffe
+        vi har inne just nu! <br>
+        <br>Vår meny innehåller allt från den klassiska espresson och den svarta koppen kaffe till modernare drycker
+        som ismatcha latte och latte med jordgubbssirap. Med vår breda meny hoppas vi att du ska hitta just rätt dryck
+        för dig.
+        Vi kan också göra anpassningar till dryckerna med koffeinfritt kaffe eller specialmjölk.<br>
+        <br>Vi finns i centrala Göteborg och kan enkelt nås via kollektivtrafiken. <br>
+        <br>Välkomna in på en kopp!
+      </p>
     </div>
 
-            <div id="contact-form">
-              <h2>Har du en fråga? Kontakta oss här!</h2>
-              <p id="error-p"></p>
-            <form>
-            <label for="name">Namn:</label><br>
-            <input type="text" id="name" name="name" placeholder="Ditt namn..."><br>
+    <!--Kontaktformulär-->
+    <div id="contact-form">
+      <h2>Har du en fråga? Kontakta oss här!</h2>
+      <p id="error-p"></p>
+      <form>
+        <label for="name">Namn:</label><br>
+        <input type="text" id="name" name="name" placeholder="Ditt namn..."><br>
 
-            <label for="email">E-post:</label><br>
-            <input type="text" id="email" name="email" placeholder="E-post..."><br>
+        <label for="email">E-post:</label><br>
+        <input type="text" id="email" name="email" placeholder="E-post..."><br>
 
-            <label for="message">Meddelande:</label><br>
-            <input type="text" id="message" name="message" placeholder="Ditt meddelande"><br>
+        <label for="message">Meddelande:</label><br>
+        <input type="text" id="message" name="message" placeholder="Ditt meddelande"><br>
 
-            <div class="form-btn"><button id="contact-button">Skicka</button></div> 
-</form>
-        </div>
+        <!--Knapp för att kalla på skicka-funktionen-->
+        <div class="form-btn"><button id="contact-button">Skicka</button></div>
+      </form>
+    </div>
 
-<footer>
-  <p>Kaffekoppen, est. 1997 <br>
-  Haga Nygata, Göteborg</p>
-</footer>
+    <!--Footer för sidan-->
+    <footer>
+      <p>Kaffekoppen, est. 1997 <br>
+        Haga Nygata, Göteborg</p>
+    </footer>
 
-</main>
-    
-  </body>
+  </main>
+
+</body>
+
 </html>

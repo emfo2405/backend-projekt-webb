@@ -367,5 +367,280 @@ margin-bottom: 50px;
   text-align: center;
 }
 
+//Anpassningar för olika skärmstorlekar
+@media(max-width: 900px) {
+  main {
+    background-color: red;
+    width: 500px;
+  }
+
+  #nav {
+    margin-top: 40px;
+    width: 500px;
+  }
+
+  #nav a{
+    float: none;
+    width: 500px;
+    margin-left: -19px;
+  }
+
+  #nav a#user {
+        float: none;
+    width: 500px;
+  }
+
+  #headimg {
+    width: 500px;
+  }
+
+  .home-text{
+    p{
+      width: 300px;
+    }
+    
+  }
+
+  .drinkimg {
+    width: 120px;
+  }
+
+  #booking-form{
+    input{
+      width: 300px;
+      margin-left: 100px;
+    }
+    label {
+      margin-left: 100px;
+    }
+  }
+
+  #contact-form {
+        input{
+      width: 300px;
+      margin-left: 100px;
+    }
+    label {
+      margin-left: 100px;
+    }
+  }
+
+  #form-login {
+        input{
+      width: 300px;
+      margin-left: 100px;
+    }
+    label {
+      margin-left: 100px;
+    }
+  }
+
+  #form-register {
+        input{
+      width: 300px;
+      margin-left: 100px;
+    }
+    label {
+      margin-left: 100px;
+    }
+  }
+
+  #form-menu{
+            input{
+      width: 300px;
+      margin-left: 100px;
+    }
+    label {
+      margin-left: 100px;
+    }
+
+    #drinkType {
+      width: 320px;
+    }
+  }
+
+  #menu-button{
+    margin-left: 170px;
+  }
+
+  #logout-button {
+    margin-left: 190px;
+  }
+
+  #menu-now {
+    li {
+      width: 400px;
+    }
+    button {
+      width: 140px;
+      padding: 15px;
+      font-size: 90%;
+    }
+  }
+
+      #updateProductBtn {
+      margin-left: 160px;
+      margin-top: -10px;
+    }
+
+    #updateButton {
+      margin-left: -10px;
+    }
+
+    #meny-div {
+      li {
+        width: 400px;
+      }
+    }
+    #bookings {
+      li {
+        width: 400px;
+      }
+    }
+
+    #messages {
+            li {
+        width: 400px;
+      }
+    }
+
+}
+
+@media(max-width: 600px) {
+  main {
+    background-color: aqua;
+    width: 410px;
+  }
+
+    #nav {
+    width: 410px;
+  }
+
+  #nav a{
+    width: 410px;
+  }
+
+  #nav a#user {
+    width: 410px;
+  }
+
+    #headimg {
+    width: 410px;
+  }
+
+    .drinkimg {
+    width: 100px;
+  }
+
+  #booking-form{
+    input{
+      width: 300px;
+      margin-left: 40px;
+    }
+    label {
+      margin-left: 40px;
+    }
+  }
+
+  #contact-form {
+    h2{
+      width: 300px;
+      margin-left: 40px;
+    }
+        input{
+      width: 300px;
+      margin-left: 40px;
+    }
+    label {
+      margin-left: 40px;
+    }
+  }
+
+   #form-login {
+        input{
+      width: 300px;
+      margin-left: 40px;
+    }
+    label {
+      margin-left: 40px;
+    }
+  }
+
+  #form-register {
+        input{
+      width: 300px;
+      margin-left: 40px;
+    }
+    label {
+      margin-left: 40px;
+    }
+  }
+
+  #form-menu{
+            input{
+      width: 300px;
+      margin-left: 40px;
+    }
+    label {
+      margin-left: 40px;
+    }
+
+  }
+
+  #menu-button{
+    margin-left: 110px;
+  }
+
+  #logout-button {
+    margin-left: 140px;
+  }
+
+  #menu-now {
+
+
+    li {
+      width: 300px;
+      margin-left: -35px;
+    }
+    button {
+      width: 120px;
+      padding: 10px;
+      font-size: 90%;
+    }
+  }
+
+      #updateProductBtn {
+      margin-left: 100px;
+      margin-top: -10px;
+    }
+
+    #updateButton {
+      margin-left: -10px;
+    }
+
+    #meny-div {
+      li {
+        width: 390px;
+        margin-left: -32px;
+        p {
+          margin-left: 10px;
+        }
+      }
+    }
+    #bookings {
+      li {
+        width: 400px;
+        margin-left: -35px;
+      }
+    }
+
+    #messages {
+            li {
+        width: 400px;
+      }
+    }
+
+
+}
 
 
