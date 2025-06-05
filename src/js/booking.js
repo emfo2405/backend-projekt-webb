@@ -27,7 +27,7 @@ async function addBooking(event) {
     try {
 
         //Koppla till API och lägga till den nya datan
-        let response = await fetch('http://localhost:3001/api/booking', {
+        let response = await fetch('https://backend-projekt-k6hc.onrender.com/api/booking', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

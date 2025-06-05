@@ -19,7 +19,7 @@ async function addMessage(event) {
     try {
 
         //Koppla till API och lägga till den nya datan
-        let response = await fetch('http://localhost:3001/api/contact', {
+        let response = await fetch('https://backend-projekt-k6hc.onrender.com/api/contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

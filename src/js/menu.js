@@ -12,7 +12,7 @@ async function postMenu() {
     menuList.innerHTML = "";
 
     //Hämtar in information från API och databasen som ska publiceras
-    let response = await fetch('http://localhost:3001/api/menu', {
+    let response = await fetch('https://backend-projekt-k6hc.onrender.com/api/menu', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -78,7 +78,7 @@ async function addProduct(event) {
     try {
 
         //Koppla till API och lägga till den nya datan
-        let response = await fetch('http://localhost:3001/api/menu', {
+        let response = await fetch('https://backend-projekt-k6hc.onrender.com/api/menu', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -116,7 +116,7 @@ menuButton.onclick = addProduct;
 async function removeProduct(productId) {
 
     //Hämtar information från API för att kunna radera inlägg
-    let response = await fetch(`http://localhost:3001/api/menu/${productId}`, {
+    let response = await fetch(`https://backend-projekt-k6hc.onrender.com/api/menu/${productId}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
@@ -138,7 +138,7 @@ async function updateProduct(productId) {
     let menuDiv = document.getElementById("menuDiv");
 
     //Hämtar in data för en produkt med id productId
-    let response = await fetch(`http://localhost:3001/api/menu/${productId}`, {
+    let response = await fetch(`https://backend-projekt-k6hc.onrender.com/api/menu/${productId}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -188,7 +188,7 @@ async function postNewProduct(productId) {
 
 
     //Hämtar information från API för att kunna uppdatera inlägg
-    let response = await fetch(`http://localhost:3001/api/menu/${productId}`, {
+    let response = await fetch(`https://backend-projekt-k6hc.onrender.com/api/menu/${productId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -218,7 +218,7 @@ async function postBooking() {
     bookingList.innerHTML = "";
 
     //Hämtar in information från API och databasen som ska publiceras
-    let response = await fetch('http://localhost:3001/api/booking', {
+    let response = await fetch('https://backend-projekt-k6hc.onrender.com/api/booking', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -254,7 +254,7 @@ async function postBooking() {
 async function removeBooking(productId) {
 
     //Hämtar information från API för att kunna radera inlägg
-    let response = await fetch(`http://localhost:3001/api/booking/${productId}`, {
+    let response = await fetch(`https://backend-projekt-k6hc.onrender.com/api/booking/${productId}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
@@ -278,7 +278,7 @@ async function postMessage() {
     messagesList.innerHTML = "";
 
     //Hämtar in information från API och databasen som ska publiceras
-    let response = await fetch('http://localhost:3001/api/contact', {
+    let response = await fetch('https://backend-projekt-k6hc.onrender.com/api/contact', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -317,7 +317,7 @@ async function postMessage() {
 async function removeMessage(productId) {
 
     //Hämtar information från API för att kunna radera inlägg
-    let response = await fetch(`http://localhost:3001/api/contact/${productId}`, {
+    let response = await fetch(`https://backend-projekt-k6hc.onrender.com/api/contact/${productId}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'

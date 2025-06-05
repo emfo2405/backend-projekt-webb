@@ -16,7 +16,7 @@ async function postMenuCustomers() {
     menuWarmOthers.innerHTML = "";
 
     //Hämtar in information från API och databasen som ska publiceras
-    let response = await fetch('http://localhost:3001/api/menu', {
+    let response = await fetch('https://backend-projekt-k6hc.onrender.com/api/menu', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
