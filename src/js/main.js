@@ -42,9 +42,9 @@ async function postMenuCustomers() {
         } else if (input.drinktype === "Varma kaffedrycker") {
             menuWarmCoffee.appendChild(li);
         } else if (input.drinktype === "Övriga varma drycker") {
-            menuColdOthers.appendChild(li);
-        } else if (input.drinktype === "Övriga kalla drycker") {
             menuWarmOthers.appendChild(li);
+        } else if (input.drinktype === "Övriga kalla drycker") {
+            menuColdOthers.appendChild(li);
         }
 
 
