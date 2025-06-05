@@ -42,7 +42,7 @@ async function postMenu() {
         deleteButton.onclick = () => removeProduct(productId);
         updateButton.onclick = () => updateProduct(productId);
         //Sätter struktur för li-element
-        li.innerHTML = `<h3 id="post-h3"> ${input.drinkname}, ${input.price}</h3> <br> <p> Beskrivning: ${input.description} <br> ${input.allergens} </p>`
+        li.innerHTML = `<h3 id="post-h3"> ${input.drinkname}, ${input.price} kr</h3> <br> <p> Beskrivning: ${input.description} <br> ${input.allergens} </p>`
         //Lägger till knapparna till li-elementen
         li.appendChild(deleteButton);
         li.appendChild(updateButton);
