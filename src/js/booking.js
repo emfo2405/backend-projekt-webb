@@ -38,12 +38,15 @@ async function addBooking(event) {
         //Data sätts till det som fås från API
         let data = await response.json();
 
+        
+
         //Om det finns ett meddelande eller error-meddelande skrivs det ut på webbplatsen
         if (data.message) {
             error.innerText = `${data.message}`;
         } else if (data.error) {
             error.innerText = `${data.error}`
-        }
+        } 
+        document.getElementById("bookingForm").reset();
 
         //Om något går fel visas ett error-meddelande i konsollen
     } catch (err) {

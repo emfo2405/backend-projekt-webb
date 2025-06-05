@@ -35,6 +35,7 @@ async function addMessage(event) {
         } else if (data.error) {
             error.innerText = `${data.error}`
         }
+        document.getElementById("contactForm").reset();
 
         //Om något går fel visas felmeddelande
     } catch (err) {
