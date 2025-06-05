@@ -1,8 +1,9 @@
 //Funktion för att lägga till ett meddelande i kontaktformulär
 
 async function addMessage(event) {
+    //Hindrar formuläret från att ladda om
     event.preventDefault();
-
+    //Hämtar in formulär-element
     let name = document.getElementById("name");
     let email = document.getElementById("email");
     let message = document.getElementById("message");
@@ -12,34 +13,34 @@ async function addMessage(event) {
     let contact = {
         name: name.value,
         email: email.value,
-        message: message.value 
+        message: message.value
     }
 
     try {
 
-    //Koppla till API och lägga till den nya datan
-    let response = await fetch('http://localhost:3001/api/contact', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(contact)
-    });
+        //Koppla till API och lägga till den nya datan
+        let response = await fetch('http://localhost:3001/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(contact)
+        });
+        //Sparar data till variabeln data
+        let data = await response.json();
 
-    let data = await response.json();
+        //Om det finns meddelanden eller error-meddelanden skrivs de ut
+        if (data.message) {
+            error.innerText = `${data.message}`;
+        } else if (data.error) {
+            error.innerText = `${data.error}`
+        }
 
-               if(data.message) {
-        error.innerText=`${data.message}`;
-    }else if (data.error) {
-        error.innerText=`${data.error}`
+        //Om något går fel visas felmeddelande
+    } catch (err) {
+        console.error("Meddelandet misslyckades")
     }
-
-    console.log(data);
-
-
-} catch (err) {
-    console.error("Meddelandet misslyckades")
-}}
+}
 
 //Hämtar formulär-knapp för att lägga till information
 let contactButton = document.getElementById("contact-button");

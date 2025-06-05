@@ -1,7 +1,8 @@
 //Funktion för att lägga till en ny användare i databasen
 async function addEmployee(event) {
+    //Hindrar sidan från att ladda om
     event.preventDefault();
-
+    //Hämtar in formulärelement från webbplatsen
     let username = document.getElementById("username");
     let password = document.getElementById("password");
     let email = document.getElementById("email");
@@ -13,6 +14,7 @@ async function addEmployee(event) {
         email: email.value
     }
 
+    //Kopplar till API
     try {
         let response = await fetch('http://localhost:3001/api/register', {
             method: 'POST',
@@ -22,6 +24,7 @@ async function addEmployee(event) {
             body: JSON.stringify(users)
         });
 
+        //Sparar svar i variabeln data
         let data = await response.json();
 
         if (data.error === 'Användarnamn ska vara ifyllt och minst 5 tecken långt') {
