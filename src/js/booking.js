@@ -47,7 +47,7 @@ async function addBooking(event) {
             error.innerText = `${data.error}`
         } 
 
-        if (name.value && email.value && date.value && time.value) {
+        if (name.value && email.value && date.value && time.value && data.message != "Se till att en tid är vald och inom våra öppettider") {
             document.getElementById("bookingForm").reset();
         }
 
