@@ -95,9 +95,12 @@ async function addProduct(event) {
         } else if (data.error) {
             error.innerText = `${data.error}`
         }
-        //Menyn publiceras sedan
+        //Menyn publiceras sedan och formuläret rensas
         postMenu();
-        document.getElementById("formMenu").reset();
+        if (drinkName.value && drinkType.value && price.value && description.value && allergens.value) {
+            document.getElementById("formMenu").reset();
+        }
+
 
         //Om något går fel visas ett felmeddelande
     } catch (err) {
@@ -135,6 +138,9 @@ async function removeProduct(productId) {
 
 //Funktion för att hämta information om en produkt med specifikt id
 async function updateProduct(productId) {
+    //Scrollar upp till formuläret för produkter
+    window.scrollTo(0,510);
+
     //Hämtar in html-elementet menuDiv
     let menuDiv = document.getElementById("menuDiv");
 
@@ -156,16 +162,12 @@ async function updateProduct(productId) {
     document.getElementById("description").value = data.rows[0].description;
     document.getElementById("allergens").value = data.rows[0].allergens;
 
-    //Skapar en knapp för att kunna uppdatera
-    let updateProductBtn = document.createElement("button");
-    //Sätter knapptext till uppdatera produkt
-    updateProductBtn.innerText = "Uppdatera produkt";
-    //Sätter ett id till knappen
-    updateProductBtn.id = "updateProductBtn";
+    //Hämtar en knapp från HTML för att kunna uppdatera
+    let updateProductBtn = document.getElementById("updateProductBtn");
+    //Visar knappen när man ska uppdatera en produkt
+    updateProductBtn.style.display = "block";
     //Vid klick på knappen körs funktionen postNewProdukt med specifikt produktid
     updateProductBtn.onclick = () => postNewProduct(productId);
-    //Knapp läggs till i menydiv
-    menuDiv.appendChild(updateProductBtn);
 }
 
 //Funktion för att kunna uppdatera en produkt med specifikt produktid

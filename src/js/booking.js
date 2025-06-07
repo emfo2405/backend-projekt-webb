@@ -46,7 +46,12 @@ async function addBooking(event) {
         } else if (data.error) {
             error.innerText = `${data.error}`
         } 
-        document.getElementById("bookingForm").reset();
+
+        if (name.value && email.value && date.value && time.value) {
+            document.getElementById("bookingForm").reset();
+        }
+
+        
 
         //Om något går fel visas ett error-meddelande i konsollen
     } catch (err) {
