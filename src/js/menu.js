@@ -164,8 +164,7 @@ async function updateProduct(productId) {
     let response = await fetch(`https://backend-projekt-k6hc.onrender.com/api/menu/${productId}`, {
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + localStorage.getItem("token")
+            'Content-Type': 'application/json'
         },
     });
 
