@@ -81,7 +81,8 @@ async function addProduct(event) {
         let response = await fetch('https://backend-projekt-k6hc.onrender.com/api/menu', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + localStorage.getItem("token")
             },
             body: JSON.stringify(menu)
         });
@@ -123,7 +124,8 @@ async function removeProduct(productId) {
     let response = await fetch(`https://backend-projekt-k6hc.onrender.com/api/menu/${productId}`, {
         method: 'DELETE',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem("token")
         },
     });
 
@@ -148,7 +150,8 @@ async function updateProduct(productId) {
     let response = await fetch(`https://backend-projekt-k6hc.onrender.com/api/menu/${productId}`, {
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem("token")
         },
     });
 
@@ -194,7 +197,8 @@ async function postNewProduct(productId) {
     let response = await fetch(`https://backend-projekt-k6hc.onrender.com/api/menu/${productId}`, {
         method: 'PUT',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem("token")
         },
         body: JSON.stringify(menu)
     });
@@ -224,7 +228,8 @@ async function postBooking() {
     let response = await fetch('https://backend-projekt-k6hc.onrender.com/api/booking', {
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem("token")
         },
     });
     //Sparar data i variabeln data
@@ -260,7 +265,8 @@ async function removeBooking(productId) {
     let response = await fetch(`https://backend-projekt-k6hc.onrender.com/api/booking/${productId}`, {
         method: 'DELETE',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem("token")
         },
     });
     //Sparar hämtad data i variabeln data
@@ -284,7 +290,8 @@ async function postMessage() {
     let response = await fetch('https://backend-projekt-k6hc.onrender.com/api/contact', {
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem("token")
         },
     });
 
@@ -323,7 +330,8 @@ async function removeMessage(productId) {
     let response = await fetch(`https://backend-projekt-k6hc.onrender.com/api/contact/${productId}`, {
         method: 'DELETE',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem("token")
         },
     });
 
