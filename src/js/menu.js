@@ -3,6 +3,9 @@ postBooking();
 postMessage();
 postMenu();
 
+//Hämta in error-element från HTML
+    const error = document.getElementById("error");
+
 //Funktion för att publicera menyn för anställda
 async function postMenu() {
     //Hämtar in list-element från HTML
@@ -56,13 +59,14 @@ async function postMenu() {
 async function addProduct(event) {
     //Hindrar formuläret från att ladda om
     event.preventDefault();
+    //Rensa innehåll av felmeddelande
+    error.innerText = "";
     //Hämtar in formulär-element från webbplatsen
     let drinkName = document.getElementById("drinkName");
     let drinkType = document.getElementById("drinkType");
     let price = document.getElementById("price");
     let description = document.getElementById("description");
     let allergens = document.getElementById("allergens");
-    let error = document.getElementById("error");
 
 
     //Hämtar värden inmatade i formuläret
@@ -89,6 +93,12 @@ async function addProduct(event) {
 
         //Svaret från API lagras i variabeln data
         let data = await response.json();
+
+        //Kontroll av respons
+        if (response.status === 401) {
+            error.innerText = data.message || "Ingen tillgång till innehållet - token saknas";
+            return;
+        }
 
         //Om det finns några meddelanden eller error-meddelanden skrivs de ut
         if (data.message) {
@@ -119,6 +129,8 @@ menuButton.onclick = addProduct;
 
 //Funktion för att radera produkt med specifikt id
 async function removeProduct(productId) {
+    //Rensa innehåll av felmeddelande
+    error.innerText = "";
 
     //Hämtar information från API för att kunna radera inlägg
     let response = await fetch(`https://backend-projekt-k6hc.onrender.com/api/menu/${productId}`, {
@@ -140,8 +152,10 @@ async function removeProduct(productId) {
 
 //Funktion för att hämta information om en produkt med specifikt id
 async function updateProduct(productId) {
+    //Rensa innehåll av felmeddelande
+    error.innerText = "";
     //Scrollar upp till formuläret för produkter
-    window.scrollTo(0,510);
+    window.scrollTo(0, 510);
 
     //Hämtar in html-elementet menuDiv
     let menuDiv = document.getElementById("menuDiv");
@@ -157,6 +171,12 @@ async function updateProduct(productId) {
 
     //Inhämtad data sparas i variabeln data
     let data = await response.json();
+
+    //Kontroll av respons
+    if (response.status === 401) {
+        error.innerText = data.message || "Ingen tillgång till innehållet - token saknas";
+        return;
+    }
 
     //Värden hämtade från API sätts in i formuläret på rätt platser
     document.getElementById("drinkName").value = data.rows[0].drinkname;
@@ -175,6 +195,8 @@ async function updateProduct(productId) {
 
 //Funktion för att kunna uppdatera en produkt med specifikt produktid
 async function postNewProduct(productId) {
+    //Rensa innehåll av felmeddelande
+    error.innerText = "";
 
     //Hämtar in formulär-element från webbplatsen
     let drinkName = document.getElementById("drinkName");
@@ -205,6 +227,12 @@ async function postNewProduct(productId) {
     //Lagrar svaret i variabeln data
     let data = await response.json();
 
+    //Kontroll av respons
+    if (response.status === 401) {
+        error.innerText = data.message || "Ingen tillgång till innehållet - token saknas";
+        return;
+    }
+
     //Om allt går rätt visas den nya listan utan de raderade inläggen
     if (response.ok) {
         postMenu();
@@ -218,6 +246,8 @@ async function postNewProduct(productId) {
 
 //Funktion för att visa bokade bord för anställda
 async function postBooking() {
+    //Rensa innehåll av felmeddelande
+    error.innerText = "";
     //Hämtar in list-element från HTML
     let bookingList = document.getElementById("booking-list");
 
@@ -234,6 +264,12 @@ async function postBooking() {
     });
     //Sparar data i variabeln data
     let data = await response.json();
+
+    //Kontroll av respons
+    if (response.status === 401) {
+        error.innerText = data.message || "Ingen tillgång till innehållet - token saknas";
+        return;
+    }
     //Tar ut rader från data
     let info = data.rows;
 
@@ -260,6 +296,8 @@ async function postBooking() {
 
 //Funktion för att radera en bokning
 async function removeBooking(productId) {
+    //Rensa innehåll av felmeddelande
+    error.innerText = "";
 
     //Hämtar information från API för att kunna radera inlägg
     let response = await fetch(`https://backend-projekt-k6hc.onrender.com/api/booking/${productId}`, {
@@ -272,6 +310,12 @@ async function removeBooking(productId) {
     //Sparar hämtad data i variabeln data
     let data = await response.json();
 
+    //Kontroll av respons
+    if (response.status === 401) {
+        error.innerText = data.message || "Ingen tillgång till innehållet - token saknas";
+        return;
+    }
+
     //Om allt går rätt visas den nya listan utan de raderade inläggen
     if (response.ok) {
         postBooking();
@@ -280,6 +324,8 @@ async function removeBooking(productId) {
 
 //Funktion för att visa meddelanden från kontaktformulär
 async function postMessage() {
+    //Rensa innehåll av felmeddelande
+    error.innerText = "";
     //Hämtar in list-element från HTML
     let messagesList = document.getElementById("messages-list");
 
@@ -297,6 +343,12 @@ async function postMessage() {
 
     //Sparar hämtad data i variabeln data
     let data = await response.json();
+
+    //Kontroll av respons
+    if (response.status === 401) {
+        error.innerText = data.message || "Ingen tillgång till innehållet - token saknas";
+        return;
+    }
     //Tar ur rader från data
     let info = data.rows;
 
@@ -325,6 +377,8 @@ async function postMessage() {
 
 //Funktion för att radera meddelanden med specifikt id
 async function removeMessage(productId) {
+    //Rensa innehåll av felmeddelande
+    error.innerText = "";
 
     //Hämtar information från API för att kunna radera inlägg
     let response = await fetch(`https://backend-projekt-k6hc.onrender.com/api/contact/${productId}`, {
@@ -337,6 +391,12 @@ async function removeMessage(productId) {
 
     //Lagrar data i variabeln data
     let data = await response.json();
+
+    //Kontroll av respons
+    if (response.status === 401) {
+        error.innerText = data.message || "Ingen tillgång till innehållet - token saknas";
+        return;
+    }
 
     //Om allt går rätt visas den nya listan utan de raderade inläggen
     if (response.ok) {
