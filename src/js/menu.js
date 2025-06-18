@@ -1,10 +1,13 @@
+
+
+//Hämta in error-element från HTML
+    const error = document.getElementById("error");
+    
 //Kör funktionerna postBooking, postMessage och postMenu
 postBooking();
 postMessage();
 postMenu();
 
-//Hämta in error-element från HTML
-    const error = document.getElementById("error");
 
 //Funktion för att publicera menyn för anställda
 async function postMenu() {
@@ -95,7 +98,7 @@ async function addProduct(event) {
         let data = await response.json();
 
         //Kontroll av respons
-        if (response.status === 401) {
+        if (response.status === 401 || response.status === 403) {
             error.innerText = data.message || "Ingen tillgång till innehållet - token saknas";
             return;
         }
@@ -172,7 +175,7 @@ async function updateProduct(productId) {
     let data = await response.json();
 
     //Kontroll av respons
-    if (response.status === 401) {
+    if (response.status === 401 || response.status === 403) {
         error.innerText = data.message || "Ingen tillgång till innehållet - token saknas";
         return;
     }
@@ -227,7 +230,7 @@ async function postNewProduct(productId) {
     let data = await response.json();
 
     //Kontroll av respons
-    if (response.status === 401) {
+    if (response.status === 401 || response.status === 403) {
         error.innerText = data.message || "Ingen tillgång till innehållet - token saknas";
         return;
     }
@@ -265,7 +268,7 @@ async function postBooking() {
     let data = await response.json();
 
     //Kontroll av respons
-    if (response.status === 401) {
+    if (response.status === 401 || response.status === 403) {
         error.innerText = data.message || "Ingen tillgång till innehållet - token saknas";
         return;
     }
@@ -310,7 +313,7 @@ async function removeBooking(productId) {
     let data = await response.json();
 
     //Kontroll av respons
-    if (response.status === 401) {
+    if (response.status === 401 || response.status === 403) {
         error.innerText = data.message || "Ingen tillgång till innehållet - token saknas";
         return;
     }
@@ -344,7 +347,7 @@ async function postMessage() {
     let data = await response.json();
 
     //Kontroll av respons
-    if (response.status === 401) {
+    if (response.status === 401 || response.status === 403) {
         error.innerText = data.message || "Ingen tillgång till innehållet - token saknas";
         return;
     }
@@ -392,7 +395,7 @@ async function removeMessage(productId) {
     let data = await response.json();
 
     //Kontroll av respons
-    if (response.status === 401) {
+    if (response.status === 401 || response.status === 403) {
         error.innerText = data.message || "Ingen tillgång till innehållet - token saknas";
         return;
     }

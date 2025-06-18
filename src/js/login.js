@@ -90,7 +90,7 @@ async function loginEmployee(event) {
             if (newResponse.ok) {
                 document.getElementById("secret-content").style.display = "block";
                 document.getElementById("anställd-content").style.display = "none";
-
+                location.reload();
             }
 
             //Om något går fel visas ett felmeddelande
